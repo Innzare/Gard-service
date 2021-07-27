@@ -47,7 +47,6 @@
       color="green"
       dark
       shrink-on-scroll
-      :src="barSrc"
       fade-img-on-scroll
     >
       <template v-slot:img="{ props }">
@@ -103,9 +102,16 @@
 
 <script>
 export default {
+   created() {
+      window.addEventListener('resize', this.updateWidth);
+      if(this.width <= 450) {
+         this.drawer = false
+      }
+   },
    data: () => (
    {
-      drawer: true,
+      width: 0,
+      drawer: null,
       items: [
          { title: 'Главная', icon: 'mdi-home', link: '/' },
          { title: 'Виды обработок', icon: 'mdi-sprout', link: 'types' },
@@ -117,7 +123,15 @@ export default {
          { title: 'О компании', icon: 'mdi-information-outline', link: 'about' },
       ],
    }),
+   methods: {
+      updateWidth() {
+         this.width = window.innerWidth;
+      },
+   },
    computed: {
+      navigationOpener() {
+         return this.width > 450;
+      },
       pageTitle () {
          if (this.$route.name === 'types') {
             return 'Виды обработок'
