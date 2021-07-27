@@ -46,7 +46,6 @@
       app
       color="green"
       dark
-      shrink-on-scroll
       fade-img-on-scroll
     >
       <template v-slot:img="{ props }">
@@ -103,9 +102,10 @@
 <script>
 export default {
    created() {
-      window.addEventListener('resize', this.updateWidth);
-      if(this.width <= 450) {
+      if(window.innerWidth <= 450) {
          this.drawer = false
+      } else {
+         this.drawer = true
       }
    },
    data: () => (
