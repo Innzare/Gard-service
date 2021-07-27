@@ -46,6 +46,8 @@
       app
       color="green"
       dark
+      :src="barSrc"
+      shrink-on-scroll
       fade-img-on-scroll
     >
       <template v-slot:img="{ props }">
