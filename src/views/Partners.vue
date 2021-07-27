@@ -1,12 +1,12 @@
 <template>
 <div>
-  О компании
+  Партнеры
 </div>
 </template>
 
 <script>
   export default {
-    name: 'About',
+    name: 'Partners',
 
     components: {
     },

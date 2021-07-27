@@ -1,12 +1,12 @@
 <template>
 <div>
-  О компании
+  Виды обработок
 </div>
 </template>
 
 <script>
   export default {
-    name: 'About',
+    name: 'Types',
 
     components: {
     },

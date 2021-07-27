@@ -1,0 +1,53 @@
+@import "./_reset";
+@import "./_fonts";
+@import "./_template";
+
+.content-wrapper {
+   margin-top: 20px;
+   flex: 1;
+   padding: 40px 20px;
+}
+
+.section-title {
+   font-family: 'DinPro', serif;
+   color: #4caf4f93;
+   font-size: 38px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+   letter-spacing: 5px;
+
+   @include tablets {
+      margin-bottom: 20px;
+      text-align: center;
+   }
+
+   @include phones {
+      font-size: 16px;
+      margin-bottom: 15px;
+   }
+}
+
+.section-subtitle {
+   font-family: 'Montserrat', serif;
+   color: #444444;
+   font-size: 36px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-bottom: 70px;
+
+   @include laptop {
+      font-size: 32px;
+   }
+
+   @include tablets {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+   }
+
+   @include phones {
+      font-size: 20px;
+      margin-bottom: 15px;
+   }
+}

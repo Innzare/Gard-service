@@ -1,12 +1,12 @@
 <template>
 <div>
-  О компании
+  Видеозаписи
 </div>
 </template>
 
 <script>
   export default {
-    name: 'About',
+    name: 'Videos',
 
     components: {
     },

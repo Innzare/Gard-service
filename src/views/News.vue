@@ -1,12 +1,12 @@
 <template>
 <div>
-  О компании
+  Новости
 </div>
 </template>
 
 <script>
   export default {
-    name: 'About',
+    name: 'News',
 
     components: {
     },
