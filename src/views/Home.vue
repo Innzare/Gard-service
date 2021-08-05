@@ -36,7 +36,7 @@
     <div class="second-block">
       <div class="container">
         <div class="slider">
-          <v-carousel show-arrows height="700px">
+          <v-carousel show-arrows-on-hover height="700px">
             <v-carousel-item
               v-for="(img, i) in images"
               :key="i"
