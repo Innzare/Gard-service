@@ -8,6 +8,10 @@
    padding: 40px 20px;
 }
 
+.main-content {
+   font-size: 0 !important;
+}
+
 .section-title {
    font-family: 'DinPro', serif;
    color: #4caf4f93;
@@ -17,15 +21,11 @@
    margin-bottom: 30px;
    letter-spacing: 5px;
 
-   @include tablets {
-      margin-bottom: 20px;
-      text-align: center;
-   }
+   // @include adaptiv-value('line-height', 1.5, 1.2, 1);
+   @include adaptiv-value('letter-spacing', 5, 1, 1);
+   @include adaptiv-value('font-size', 38, 18, 1);
+   @include adaptiv-value('margin-bottom', 30, 15, 1);
 
-   @include phones {
-      font-size: 16px;
-      margin-bottom: 15px;
-   }
 }
 
 .section-subtitle {
