@@ -4,14 +4,42 @@
       <div class="container">
         <div class="section-title">Компания «ГАРД Сервис»</div>
         <div class="content-block about-block">
-          Мы занимаемся оказанием услуг при помощи установок ГАРД® собственного
-          производства. Мы не производим технику на продажу, поскольку считаем,
-          что в сфере аэрозольных технологий должны быть задействованы
-          исключительно специалисты, которые знают все тонкости работ, связанных
-          с применение пестицидов. Остерегайтесь лиц, действующих от нашего
-          имени. Нас Вы всегда можете найти по телефону: + 7 (347) 237-60-16. Мы
-          всегда рады Вам помочь!
+          <div class="about-block__text">
+            <p>
+              <span style="color: green; font-weight: bold">ГАРД®</span> -
+              аэрозольная технология примененяемая в решении практических задач
+              на службе здоровья человека, в сельском и лесном хозяйстве, в
+              животноводстве, в охране природы и в промышленности.
+            </p>
+            <p>
+              Мы занимаемся оказанием услуг при помощи установок собственного
+              производства. Мы не производим технику на продажу, поскольку
+              считаем, что в сфере аэрозольных технологий должны быть
+              задействованы исключительно специалисты, которые знают все
+              тонкости работ, связанных с применение пестицидов. Остерегайтесь
+              лиц, действующих от нашего имени!
+            </p>
+            <p>
+              Нас Вы всегда можете найти по телефону:
+              <span style="font-weight: bold"
+                ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
+              >
+            </p>
+            <p>Мы всегда рады Вам помочь!</p>
+          </div>
+          <div class="about-block__img">
+            <v-img max-width="100%" src="@/assets/img/5.jpg"> </v-img>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="our-achievements">
+      <div class="container">
+        <div class="section-title">Наши достижения</div>
+      </div>
+    </div>
+    <div>
+      <div class="container">
         <div class="section-title">Установка ГАРД</div>
         <div class="first-block">
           <div class="first-block__item first-block__left">
@@ -44,6 +72,21 @@
             ></v-carousel-item>
           </v-carousel>
         </div>
+      </div>
+    </div>
+    <div class="our-advantages">
+      <div class="container">
+        <div class="section-title">Наши преимущества</div>
+      </div>
+    </div>
+    <div class="our-partners">
+      <div class="container">
+        <div class="section-title">Наши партнеры</div>
+      </div>
+    </div>
+    <div class="our-partners">
+      <div class="container">
+        <div class="section-title">Контакты</div>
       </div>
     </div>
   </div>
@@ -123,6 +166,27 @@ $maxWidthContainer: 1170;
   @include adaptiv-value("font-size", 24, 14, 1);
 }
 
+.about-block {
+  display: flex;
+  @include laptop() {
+    flex-direction: column;
+  }
+  &__text {
+    margin-right: 30px;
+    flex: 0 1 50%;
+  }
+  &__img {
+    flex: 0 1 50%;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: 0 0 7px 7px rgba(0, 0, 0, 0.2);
+    img {
+      height: 100%;
+    }
+  }
+}
+
 .first-block {
   display: flex;
   margin-bottom: 50px;
@@ -175,6 +239,11 @@ $maxWidthContainer: 1170;
 }
 
 .second-block {
+  width: 70%;
+  @include laptop() {
+    width: 100%;
+  }
+  margin: 0 auto 50px;
   .v-carousel {
     height: calc(
       200px + (500 - 200) * ((100vw - 320px) / (1200 - 320))

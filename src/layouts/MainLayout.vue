@@ -1,17 +1,17 @@
 <template>
   <v-app id="inspire" class="overflow-y-none">
     <v-navigation-drawer v-model="drawer" app>
-      <v-list-item>
+      <!-- <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
             Звоните по номеру:
           </v-list-item-title>
           <v-list-item-subtitle> +7(347)237-60-16 </v-list-item-subtitle>
         </v-list-item-content>
-      </v-list-item>
+      </v-list-item> -->
 
-      <v-divider></v-divider>
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider>
+      <v-divider></v-divider> -->
 
       <v-list dense nav>
         <v-list-item v-for="item in items" :key="item.title" link>
@@ -27,7 +27,18 @@
             </v-list-item-content>
           </router-link>
         </v-list-item>
+        <v-btn
+          class="mt-10 pa-5"
+          style="color: white"
+          width="100%"
+          flat
+          color="green"
+        >
+          Обратная связь
+          <v-icon right dark>mdi-phone</v-icon>
+        </v-btn>
       </v-list>
+      <img src="@/assets/img/logo2.png" alt="" />
     </v-navigation-drawer>
 
     <v-app-bar
@@ -45,9 +56,20 @@
         ></v-img>
       </template>
 
+      <img
+        :src="
+          $route.name === 'types' || $route.name === 'about'
+            ? ''
+            : require('@/assets/img/logo.png')
+        "
+        alt=""
+      />
+
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>{{ pageTitle }}</v-toolbar-title>
+      <v-toolbar-title>{{
+        $route.name !== "/" ? pageTitle : ""
+      }}</v-toolbar-title>
 
       <template
         v-slot:extension
@@ -83,6 +105,7 @@
 
     <v-main>
       <div class="main-content">
+        <div class="background"></div>
         <router-view />
       </div>
     </v-main>
@@ -206,13 +229,62 @@ $maxWidthContainer: 1170;
     );
   }
 }
+
+.v-navigation-drawer {
+  &__content {
+    position: relative;
+  }
+  img {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+}
+
+.theme--dark.v-btn.v-btn--icon {
+  display: none !important;
+}
+
+@media (max-width: 1263px) {
+  .theme--dark.v-btn.v-btn--icon {
+    display: block !important;
+  }
+}
+.v-app-bar {
+  // position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    height: 167%;
+    user-select: none;
+    @include tablets() {
+      display: none;
+    }
+  }
+}
 .main-content {
+  position: relative;
   padding: 40px;
-  background: #eef3fa;
+  background-color: #eef3fa;
+  opacity: 0.9;
   font-family: "DinPro", serif;
   font-size: 24px;
   @include adaptiv-value("padding", 40, 15, 1);
   @include adaptiv-value("padding-top", 40, 25, 1);
+}
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-image: url("./../assets/img/pattern.png");
+  background-repeat: repeat;
+  z-index: -100;
 }
 .theme--light.v-navigation-drawer {
   background: #f9f9f9;
