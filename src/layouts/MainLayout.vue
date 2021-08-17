@@ -256,12 +256,13 @@ $maxWidthContainer: 1170;
 
 .v-navigation-drawer {
   height: 115vh !important;
+  max-height: none;
   &__content {
     position: relative;
   }
   img {
     position: absolute;
-    bottom: 150px;
+    bottom: 140px;
     left: 49%;
     transform: translateX(-50%);
     width: 70%;
