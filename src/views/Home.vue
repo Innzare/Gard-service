@@ -258,7 +258,6 @@ $maxWidthContainer: 1170;
     @include laptop() {
       max-height: 300px;
       .v-parallax__image-container {
-        border-radius: 5px !important;
         img {
           bottom: 90px !important;
         }

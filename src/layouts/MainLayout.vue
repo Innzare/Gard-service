@@ -267,7 +267,7 @@ $maxWidthContainer: 1170;
     width: 70%;
     @include tablets() {
       width: 43%;
-      bottom: 140px;
+      bottom: 200px;
     }
   }
   @media (max-height: 630px) {
