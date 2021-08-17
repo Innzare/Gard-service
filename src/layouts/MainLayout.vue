@@ -28,7 +28,7 @@
           </router-link>
         </v-list-item>
         <v-btn
-          class="mt-10 pa-5 callback-btn"
+          class="mt-5 pa-5 callback-btn"
           style="color: white"
           width="100%"
           color="green"
@@ -265,7 +265,7 @@ $maxWidthContainer: 1170;
   }
   img {
     position: absolute;
-    bottom: 170px;
+    bottom: 150px;
     left: 49%;
     transform: translateX(-50%);
     width: 70%;
@@ -288,7 +288,7 @@ $maxWidthContainer: 1170;
   }
 }
 
-@media (max-height: 730px) {
+@media (max-height: 630px) {
   .v-navigation-drawer {
     img {
       display: none;
