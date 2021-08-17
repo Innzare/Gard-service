@@ -56,6 +56,7 @@
       </template>
 
       <img
+        v-if="$route.name !== 'types' || $route.name !== 'about'"
         :src="
           $route.name === 'types' || $route.name === 'about'
             ? ''
@@ -275,19 +276,19 @@ $maxWidthContainer: 1170;
   }
   @media (max-height: 630px) {
     .callback-btn {
-      margin-top: 10px !important;
+      margin-top: 5px !important;
     }
     .v-list--nav.v-list--dense .v-list-item:not(:last-child):not(:only-child),
     .v-list--nav .v-list-item--dense:not(:last-child):not(:only-child),
     .v-list--rounded.v-list--dense
       .v-list-item:not(:last-child):not(:only-child),
     .v-list--rounded .v-list-item--dense:not(:last-child):not(:only-child) {
-      margin-bottom: 2px !important;
+      margin-bottom: 0px !important;
     }
   }
 }
 
-@media (max-height: 630px) {
+@media (max-height: 730px) {
   .v-navigation-drawer {
     img {
       display: none;
