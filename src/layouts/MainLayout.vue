@@ -28,7 +28,7 @@
           </router-link>
         </v-list-item>
         <v-btn
-          class="mt-10 pa-5"
+          class="mt-10 pa-5 callback-btn"
           style="color: white"
           width="100%"
           color="green"
@@ -271,6 +271,18 @@ $maxWidthContainer: 1170;
     @include tablets() {
       width: 43%;
       bottom: 140px;
+    }
+  }
+  @media (max-height: 630px) {
+    .callback-btn {
+      margin-top: 10px !important;
+    }
+    .v-list--nav.v-list--dense .v-list-item:not(:last-child):not(:only-child),
+    .v-list--nav .v-list-item--dense:not(:last-child):not(:only-child),
+    .v-list--rounded.v-list--dense
+      .v-list-item:not(:last-child):not(:only-child),
+    .v-list--rounded .v-list-item--dense:not(:last-child):not(:only-child) {
+      margin-bottom: 2px !important;
     }
   }
 }
