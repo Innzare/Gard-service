@@ -56,12 +56,8 @@
       </template>
 
       <img
-        v-if="$route.name !== 'types' || $route.name !== 'about'"
-        :src="
-          $route.name === 'types' || $route.name === 'about'
-            ? ''
-            : require('@/assets/img/logo.png')
-        "
+        v-if="$route.name !== 'types' && $route.name !== 'about'"
+        :src="require('@/assets/img/logo.png')"
         alt=""
       />
 
