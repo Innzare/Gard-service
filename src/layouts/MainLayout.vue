@@ -293,7 +293,7 @@ $maxWidthContainer: 1170;
 
 @media (max-height: 630px) {
   .v-navigation-drawer {
-    img {
+    .navigation-logo {
       display: none;
     }
   }
