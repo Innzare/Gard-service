@@ -37,7 +37,7 @@
           <v-icon right dark>mdi-phone</v-icon>
         </v-btn>
       </v-list>
-      <img src="@/assets/img/logo2.png" alt="" />
+      <img class="navigation-logo" src="@/assets/img/logo2.png" alt="" />
     </v-navigation-drawer>
 
     <v-app-bar
@@ -281,6 +281,12 @@ $maxWidthContainer: 1170;
       .v-list-item:not(:last-child):not(:only-child),
     .v-list--rounded .v-list-item--dense:not(:last-child):not(:only-child) {
       margin-bottom: 0px !important;
+    }
+  }
+  .navigation-logo {
+    display: none;
+    @include laptop() {
+      display: block;
     }
   }
 }
