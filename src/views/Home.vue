@@ -37,7 +37,8 @@
               </p>
               <p>Мы всегда рады Вам помочь!</p>
             </div>
-            <v-parallax src="@/assets/img/5.jpg"> </v-parallax>
+            <v-parallax class="parallax-adaptive" src="@/assets/img/5.jpg">
+            </v-parallax>
           </div>
         </div>
       </div>
@@ -250,13 +251,14 @@ $maxWidthContainer: 1170;
   &__img {
     position: relative;
     flex: 0 0 30%;
-    overflow: hidden;
     border-radius: 5px;
     height: 100%;
     box-shadow: 0 0 7px 7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     @include laptop() {
       max-height: 300px;
       .v-parallax__image-container {
+        border-radius: 5px !important;
         img {
           bottom: 90px !important;
         }
