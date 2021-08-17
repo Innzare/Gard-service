@@ -258,23 +258,24 @@ $maxWidthContainer: 1170;
 }
 
 .v-navigation-drawer {
+  height: 115vh !important;
   &__content {
     position: relative;
   }
   img {
     position: absolute;
-    bottom: 50px;
+    bottom: 170px;
     left: 49%;
     transform: translateX(-50%);
     width: 70%;
     @include tablets() {
       width: 43%;
-      bottom: 15px;
+      bottom: 140px;
     }
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 630px) {
   .v-navigation-drawer {
     img {
       display: none;
