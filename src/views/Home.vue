@@ -19,16 +19,25 @@
               тонкости работ, связанных с применение пестицидов. Остерегайтесь
               лиц, действующих от нашего имени!
             </p>
-            <p>
+            <p class="p-adaptive">
               Нас Вы всегда можете найти по телефону:
               <span style="font-weight: bold"
                 ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
               >
             </p>
-            <p>Мы всегда рады Вам помочь!</p>
+            <p class="p-adaptive">Мы всегда рады Вам помочь!</p>
           </div>
           <div class="about-block__img">
-            <v-img max-width="100%" src="@/assets/img/5.jpg"> </v-img>
+            <div class="adaptive">
+              <p>
+                Нас Вы всегда можете найти по телефону:
+                <span style="font-weight: bold"
+                  ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
+                >
+              </p>
+              <p>Мы всегда рады Вам помочь!</p>
+            </div>
+            <v-parallax src="@/assets/img/5.jpg"> </v-parallax>
           </div>
         </div>
       </div>
@@ -93,6 +102,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "Home",
   data() {
@@ -110,9 +120,39 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapGetters(["typesTabs"]),
+  },
   components: {},
 };
 </script>
+
+<style lang="scss">
+@mixin laptop {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phones {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+.home-page {
+  @include laptop() {
+    .v-parallax__image-container {
+      img {
+        bottom: 90px !important;
+      }
+    }
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 @mixin laptop {
@@ -171,16 +211,57 @@ $maxWidthContainer: 1170;
   @include laptop() {
     flex-direction: column;
   }
+  .p-adaptive {
+    @include tablets() {
+      display: none;
+    }
+  }
+  .adaptive {
+    display: none;
+    @include tablets() {
+      width: 100%;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.637);
+      p {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        span {
+          display: block;
+        }
+      }
+      &:last-child {
+        margin-top: 0px;
+      }
+    }
+  }
   &__text {
     margin-right: 30px;
-    flex: 0 1 50%;
+    flex: 0 1 70%;
   }
   &__img {
-    flex: 0 1 50%;
+    position: relative;
+    flex: 0 0 30%;
     overflow: hidden;
     border-radius: 5px;
     height: 100%;
     box-shadow: 0 0 7px 7px rgba(0, 0, 0, 0.2);
+    @include laptop() {
+      max-height: 300px;
+      .v-parallax__image-container {
+        img {
+          bottom: 90px !important;
+        }
+      }
+    }
     img {
       height: 100%;
     }

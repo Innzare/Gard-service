@@ -18,6 +18,7 @@ const routes = [
         path: '/types',
         component: () => import('@/views/Types.vue'),
         name: 'types',
+        params: true,
       },
       {
         path: '/news',

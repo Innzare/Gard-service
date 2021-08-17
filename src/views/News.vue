@@ -1,18 +1,16 @@
 <template>
-<div>
-  Новости
-</div>
+  <div class="news-page">
+    <h1>123</h1>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'News',
+export default {
+  name: "News",
 
-    components: {
-    },
-  }
+  components: {},
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

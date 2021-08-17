@@ -31,7 +31,6 @@
           class="mt-10 pa-5"
           style="color: white"
           width="100%"
-          flat
           color="green"
         >
           Обратная связь
@@ -43,7 +42,7 @@
 
     <v-app-bar
       app
-      color="green"
+      color="#00A64D"
       dark
       :src="barSrc"
       shrink-on-scroll
@@ -80,13 +79,14 @@
           show-arrows
           grow
           align-with-title
+          v-model="currentTypesTab"
           v-if="$route.name === 'types'"
         >
           <v-tab>Растениеводство</v-tab>
           <v-tab>Животноводство и птицеводство</v-tab>
           <v-tab>Лесное хозяйство</v-tab>
           <v-tab>Здравоохранение</v-tab>
-          <v-tab>Мчс</v-tab>
+          <v-tab>МЧС</v-tab>
         </v-tabs>
         <v-tabs
           background-color="rgba(0,0,0,.3)"
@@ -106,13 +106,14 @@
     <v-main>
       <div class="main-content">
         <div class="background"></div>
-        <router-view />
+        <router-view :currentTypesTab="currentTypesTab" />
       </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
+// import { mapGetters } from "vuex";
 export default {
   created() {
     if (window.innerWidth < 1263) {
@@ -124,6 +125,7 @@ export default {
   data: () => ({
     width: 0,
     drawer: null,
+    currentTypesTab: null,
     items: [
       { title: "Главная", icon: "mdi-home", link: "/" },
       { title: "Виды обработок", icon: "mdi-sprout", link: "types" },
@@ -145,6 +147,7 @@ export default {
     },
   },
   computed: {
+    // ...mapGetters(["typesCurrentTab", "typesTabs"]),
     navigationOpener() {
       return this.width > 450;
     },
@@ -181,6 +184,30 @@ export default {
   },
 };
 </script>
+
+<style lang='scss'>
+@mixin laptop {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phones {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+.v-slide-group__next,
+.v-slide-group__prev {
+  @include tablets() {
+    min-width: 24px !important;
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 @mixin laptop {
@@ -237,9 +264,21 @@ $maxWidthContainer: 1170;
   img {
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 49%;
     transform: translateX(-50%);
     width: 70%;
+    @include tablets() {
+      width: 43%;
+      bottom: 15px;
+    }
+  }
+}
+
+@media (max-height: 600px) {
+  .v-navigation-drawer {
+    img {
+      display: none;
+    }
   }
 }
 
