@@ -251,10 +251,10 @@ $maxWidthContainer: 1170;
   &__img {
     position: relative;
     flex: 0 0 30%;
+    overflow: hidden;
     border-radius: 5px;
     height: 100%;
     box-shadow: 0 0 7px 7px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     @include laptop() {
       max-height: 300px;
       .v-parallax__image-container {
