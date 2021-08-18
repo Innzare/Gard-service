@@ -265,12 +265,9 @@ $maxWidthContainer: 1170;
   // height: 115vh !important;
   // max-height: none;
   img {
-    // position: absolute;
-    // bottom: 140px;
-    // left: 49%;
-    // transform: translateX(-50%);
     width: 43%;
     margin: 20px auto 0;
+    transform: translateX(-5px);
     @include adaptiv-value("margin-top", 180, 20, 1);
   }
   @media (max-height: 630px) {
