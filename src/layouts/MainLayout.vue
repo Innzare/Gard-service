@@ -204,6 +204,13 @@ export default {
     min-width: 24px !important;
   }
 }
+.v-navigation-drawer {
+  width: 100%;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
 
 <style lang="scss" scoped>
@@ -255,21 +262,16 @@ $maxWidthContainer: 1170;
 }
 
 .v-navigation-drawer {
-  height: 115vh !important;
-  max-height: none;
-  &__content {
-    position: relative;
-  }
+  // height: 115vh !important;
+  // max-height: none;
   img {
-    position: absolute;
-    bottom: 140px;
-    left: 49%;
-    transform: translateX(-50%);
-    width: 70%;
-    @include tablets() {
-      width: 43%;
-      bottom: 265px;
-    }
+    // position: absolute;
+    // bottom: 140px;
+    // left: 49%;
+    // transform: translateX(-50%);
+    width: 43%;
+    margin: 20px auto 0;
+    @include adaptiv-value("margin-top", 180, 20, 1);
   }
   @media (max-height: 630px) {
     .callback-btn {
@@ -291,7 +293,7 @@ $maxWidthContainer: 1170;
   }
 }
 
-@media (max-height: 630px) {
+@media (max-height: 530px) {
   .v-navigation-drawer {
     .navigation-logo {
       display: none;
