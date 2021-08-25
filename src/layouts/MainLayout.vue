@@ -31,7 +31,7 @@
           class="mt-5 pa-5 callback-btn"
           style="color: white"
           width="100%"
-          color="green"
+          color="#0063A7"
         >
           Обратная связь
           <v-icon right dark>mdi-phone</v-icon>
@@ -42,7 +42,7 @@
 
     <v-app-bar
       app
-      color="#00A64D"
+      color="#17AD5C"
       dark
       :src="barSrc"
       shrink-on-scroll
@@ -90,6 +90,7 @@
           show-arrows
           grow
           align-with-title
+          v-model="currentAboutTab"
           v-if="$route.name === 'about'"
         >
           <v-tab>О GARD</v-tab>
@@ -103,7 +104,10 @@
     <v-main>
       <div class="main-content">
         <div class="background"></div>
-        <router-view :currentTypesTab="currentTypesTab" />
+        <router-view
+          :currentTypesTab="currentTypesTab"
+          :currentAboutTab="currentAboutTab"
+        />
       </div>
     </v-main>
   </v-app>
@@ -123,6 +127,7 @@ export default {
     width: 0,
     drawer: null,
     currentTypesTab: null,
+    currentAboutTab: null,
     items: [
       { title: "Главная", icon: "mdi-home", link: "/" },
       { title: "Виды обработок", icon: "mdi-sprout", link: "types" },
@@ -169,7 +174,7 @@ export default {
     },
     barSrc() {
       if (this.$route.name === "/") {
-        return require("@/assets/img/6.jpg");
+        return require("@/assets/img/0001.jpg");
       } else if (this.$route.name === "about") {
         return require("@/assets/img/4.jpg");
       } else if (this.$route.name === "types") {

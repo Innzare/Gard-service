@@ -6,7 +6,7 @@
         <div class="content-block about-block">
           <div class="about-block__text">
             <p>
-              <span style="color: green; font-weight: bold">ГАРД®</span> -
+              <span style="color: #0063a7; font-weight: bold">ГАРД®</span> -
               аэрозольная технология примененяемая в решении практических задач
               на службе здоровья человека, в сельском и лесном хозяйстве, в
               животноводстве, в охране природы и в промышленности.
@@ -43,6 +43,11 @@
         </div>
       </div>
     </div>
+    <div class="our-advantages">
+      <div class="container">
+        <div class="section-title">Наши преимущества</div>
+      </div>
+    </div>
     <div class="our-achievements">
       <div class="container">
         <div class="section-title">Наши достижения</div>
@@ -66,7 +71,9 @@
               функций генератора аэрозоля регулируемой дисперсности частиц и
               дистанционного мелко, средне и крупнокапельного опрыскивателя.
             </p>
-            <v-btn x-large color="success" dark> Узнать больше ... </v-btn>
+            <v-btn class="know-more" x-large color="#0063A7" dark>
+              Узнать больше ...
+            </v-btn>
           </div>
         </div>
       </div>
@@ -82,11 +89,9 @@
             ></v-carousel-item>
           </v-carousel>
         </div>
-      </div>
-    </div>
-    <div class="our-advantages">
-      <div class="container">
-        <div class="section-title">Наши преимущества</div>
+        <v-btn class="know-more" x-large color="#0063A7" dark>
+          Узнать больше ...
+        </v-btn>
       </div>
     </div>
     <div class="our-partners">
@@ -110,13 +115,16 @@ export default {
     return {
       images: [
         {
-          src: require("@/assets/img/gard5.jpg"),
+          src: require("@/assets/img/14.png"),
         },
         {
-          src: require("@/assets/img/gard4.jpg"),
+          src: require("@/assets/img/16.png"),
         },
         {
           src: require("@/assets/img/gard.jpg"),
+        },
+        {
+          src: require("@/assets/img/gard4.jpg"),
         },
       ],
     };
@@ -274,7 +282,7 @@ $maxWidthContainer: 1170;
   margin-bottom: 50px;
   @include tablets() {
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   &__left {
     margin-right: 50px;
@@ -313,6 +321,9 @@ $maxWidthContainer: 1170;
   }
   .v-btn {
     width: auto;
+    @include tablets() {
+      display: none;
+    }
     @include phones() {
       width: 100%;
       @include adaptiv-value("font-size", 16, 14, 1);
@@ -338,6 +349,17 @@ $maxWidthContainer: 1170;
     border-radius: 5px;
     border: 2px solid #a4bbdd;
     box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.2);
+  }
+  .know-more {
+    display: none;
+    margin-top: 25px;
+    @include tablets() {
+      display: block;
+    }
+    @include phones() {
+      width: 100%;
+      @include adaptiv-value("font-size", 16, 14, 1);
+    }
   }
 }
 </style>
