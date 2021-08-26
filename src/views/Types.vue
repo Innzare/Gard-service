@@ -21,7 +21,7 @@
       </p>
     </div>
     <v-tabs-items v-model="currentTypesTab" class="tabs">
-      <v-tab-item>
+      <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">Растениеводство</div>
@@ -84,8 +84,8 @@
               Технологические характеристики установки ГАРД® :
             </div>
             <v-data-table
-              :headers="headers"
-              :items="desserts"
+              :headers="rastHeaders"
+              :items="rastDesc"
               disable-sort
               hide-default-footer
               mobile-breakpoint="768"
@@ -119,7 +119,7 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab-item>
+      <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">Животноводство и птицеводство</div>
@@ -269,6 +269,14 @@
             <div class="section-title mt-10">
               Технологические характеристики установки ГАРД® :
             </div>
+            <v-data-table
+              :headers="jivHeaders"
+              :items="jivDesc"
+              disable-sort
+              hide-default-footer
+              mobile-breakpoint="768"
+            ></v-data-table>
+            <div class="section-title mt-10">Дополнительные видеоматериалы</div>
             <div class="video">
               <iframe
                 width="640"
@@ -284,10 +292,21 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab-item>
+      <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">Лесное хозяйство</div>
+            <div class="video">
+              <iframe
+                width="760"
+                height="430"
+                src="https://www.youtube-nocookie.com/embed/iqbjYaiTTmk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <p>
               Лесозащита является одним из важнейших элементов лесоводства.
               Значение мероприятий по локализации и ликвидации очагов вредных
@@ -304,11 +323,88 @@
               многие факторы, связанные, как с биологией хозяйственно опасного
               организма, так и с технологией применения пестицидов.
             </p>
+            <p>
+              Аэрозольная технология применения инсектицидов, наряду с высокой
+              производительностью (до 2000 га за смену), характеризуется меньшим
+              загрязнением окружающей среды и более качественным проведением
+              работ, по сравнению с авиационным методом опрыскивания. При
+              аэрозольных обработках максимально сохраняется полезная
+              энтомофауна, в том числе пчелы, что подтверждается проведенными
+              исследованиями в научно-исследовательских организациях
+              Башкортостана, ИХКИГ СО РАН (г. Новосибирск) и сотрудниками
+              ВНИИГИНТОКС (Н.В. Булевский). Это позволяет в короткие сроки и с
+              меньшим воздействием на нецелевые объекты производить лесозащитные
+              работы по локализации и ликвидации очагов вредных организмов.
+            </p>
+
+            <p>
+              Компания
+              <span style="color: #0063a7; font-weight: bold"
+                >«ГАРД® Сервис»</span
+              >
+              занимается внедрением усовершенствованных наземных машин
+              <span style="color: #0063a7; font-weight: bold">ГАРД®</span>
+              для внесения пестицидов в различных отраслях, в том числе и в
+              лесном хозяйстве. Наши машины успешно применялись в лесах
+              Тюменской, Нижегородской, Тверской, Ростовской, Московской
+              областей, в Республике Башкортостан, а так же в Республике
+              Казахстан. Специалисты, работающие в нашей организации, имеют
+              огромный опыт применения наземных машин
+              <span style="color: #0063a7; font-weight: bold">ГАРД®</span>
+              против хвое-листогрызущих вредителей.
+            </p>
+
+            <p>
+              Такие технологические характеристики установки
+              <span style="color: #0063a7; font-weight: bold">ГАРД®</span>, как
+              большая ширина захвата, высокая производительность, низкий расход
+              рабочей жидкости существенно облегчают и ускоряют проведение
+              лесозащитных работ, а так же значительно сокращают затраты.
+            </p>
+
+            <div class="section-title mt-10">
+              Технологические характеристики установки ГАРД® при лесозащитных
+              работах:
+            </div>
+
+            <v-data-table
+              :headers="lesHeaders"
+              :items="lesDesc"
+              disable-sort
+              hide-default-footer
+              mobile-breakpoint="768"
+            ></v-data-table>
+
+            <div class="section-title mt-10">Дополнительные видеоматериалы</div>
+            <div class="dop-video-wrapper">
+              <div class="video">
+                <iframe
+                  width="760"
+                  height="430"
+                  src="https://www.youtube-nocookie.com/embed/iqbjYaiTTmk"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="video">
+                <iframe
+                  width="760"
+                  height="430"
+                  src="https://www.youtube-nocookie.com/embed/iqbjYaiTTmk"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
           </v-card-text>
         </v-card>
       </v-tab-item>
 
-      <v-tab-item>
+      <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">Здравоохранение</div>
@@ -325,7 +421,7 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab-item>
+      <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">МЧС</div>
@@ -353,7 +449,7 @@ export default {
   name: "Types",
   data() {
     return {
-      headers: [
+      rastHeaders: [
         {
           text: "Производительность одной установки",
           value: "name",
@@ -362,12 +458,42 @@ export default {
         { text: "Расход рабочей жидкости", value: "fat" },
         { text: "Расход топлива установки (с автомобилем)", value: "carbs" },
       ],
-      desserts: [
+      rastDesc: [
         {
           name: "2000 га за смену",
           calories: "До 700 м",
           fat: "1-2 л/га",
           carbs: "Не более 0,35 л/га",
+        },
+      ],
+      jivHeaders: [
+        {
+          text: "Производительность одной установки",
+          value: "name",
+        },
+        { text: "Расход рабочей жидкости", value: "fat" },
+      ],
+      jivDesc: [
+        {
+          name: "до 1000 м3 в минуту",
+          fat: "3 – 80 л/мин",
+        },
+      ],
+      lesHeaders: [
+        {
+          text: "Производительность одной установки",
+          value: "name",
+        },
+        { text: "Эффективная ширина захвата", value: "fat" },
+        { text: "Расход рабочей жидкости", value: "carbs" },
+        { text: "Расход топлива установки (с автомобилем)", value: "calories" },
+      ],
+      lesDesc: [
+        {
+          name: "2000 га за смену",
+          fat: "До 1500 м",
+          carbs: "0,25-3 л/га",
+          calories: "Не более 0,35 л/га",
         },
       ],
     };
@@ -556,6 +682,9 @@ $maxWidthContainer: 1170;
 }
 .static {
   padding: 0 17px;
+  @include tablets() {
+    display: none;
+  }
   p {
     line-height: 1.3;
     color: #0063a7;
@@ -613,20 +742,17 @@ $maxWidthContainer: 1170;
     background: #0064a7;
     color: #fff;
     text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
+    user-select: none;
     @include tablets() {
       margin-bottom: 20px;
     }
     img {
       width: 50%;
       margin-bottom: 20px;
+      user-select: none;
       @include tablets() {
         width: 25%;
       }
-    }
-    &:hover {
-      background: #0064a7a8;
     }
   }
 }
