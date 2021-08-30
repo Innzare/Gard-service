@@ -397,6 +397,7 @@ $maxWidthContainer: 1170;
       background: #5eb760;
       @include tablets() {
         margin-bottom: 20px;
+        max-height: 200px;
       }
       &__img {
         display: flex;
