@@ -14,7 +14,12 @@
       <v-divider></v-divider> -->
 
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          @click="routerPageChacnge"
+        >
           <router-link class="nav-link-item" :to="{ name: item.link }">
             <v-list-item-icon>
               <v-icon color="green darken-2">
@@ -104,10 +109,12 @@
     <v-main>
       <div class="main-content">
         <div class="background"></div>
-        <router-view
-          :currentTypesTab="currentTypesTab"
-          :currentAboutTab="currentAboutTab"
-        />
+        <transition name="fade">
+          <router-view
+            :currentTypesTab="currentTypesTab"
+            :currentAboutTab="currentAboutTab"
+          />
+        </transition>
       </div>
     </v-main>
   </v-app>
@@ -146,6 +153,9 @@ export default {
   methods: {
     updateWidth() {
       this.width = window.innerWidth;
+    },
+    routerPageChacnge() {
+      window.scrollTo(0, 0);
     },
   },
   computed: {
@@ -266,6 +276,21 @@ $maxWidthContainer: 1170;
   }
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition-property: opacity;
+  transition-duration: 0.25s;
+}
+
+.fade-enter-active {
+  transition-delay: 0.25s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
 .v-navigation-drawer {
   // height: 115vh !important;
   // max-height: none;
@@ -320,7 +345,7 @@ $maxWidthContainer: 1170;
     right: 50px;
     height: 167%;
     user-select: none;
-    @include tablets() {
+    @include laptop() {
       display: none;
     }
   }

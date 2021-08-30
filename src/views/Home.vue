@@ -1,108 +1,117 @@
 <template>
   <div class="home-page">
     <div class="first-block-wrapper">
-      <div class="container">
-        <div class="section-title">Компания «ГАРД Сервис»</div>
-        <div class="content-block about-block">
-          <div class="about-block__text">
+      <div class="section-title">Компания «ГАРД Сервис»</div>
+      <div class="content-block about-block">
+        <div class="about-block__text">
+          <p>
+            <span style="color: #0063a7; font-weight: bold">ГАРД®</span> -
+            аэрозольная технология примененяемая в решении практических задач на
+            службе здоровья человека, в сельском и лесном хозяйстве, в
+            животноводстве, в охране природы и в промышленности.
+          </p>
+          <p>
+            Мы занимаемся оказанием услуг при помощи установок собственного
+            производства. Мы не производим технику на продажу, поскольку
+            считаем, что в сфере аэрозольных технологий должны быть
+            задействованы исключительно специалисты, которые знают все тонкости
+            работ, связанных с применение пестицидов. Остерегайтесь лиц,
+            действующих от нашего имени!
+          </p>
+          <p class="p-adaptive">
+            Нас Вы всегда можете найти по телефону:
+            <span style="font-weight: bold"
+              ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
+            >
+          </p>
+          <p class="p-adaptive">Мы всегда рады Вам помочь!</p>
+        </div>
+        <div class="about-block__img">
+          <div class="adaptive">
             <p>
-              <span style="color: #0063a7; font-weight: bold">ГАРД®</span> -
-              аэрозольная технология примененяемая в решении практических задач
-              на службе здоровья человека, в сельском и лесном хозяйстве, в
-              животноводстве, в охране природы и в промышленности.
-            </p>
-            <p>
-              Мы занимаемся оказанием услуг при помощи установок собственного
-              производства. Мы не производим технику на продажу, поскольку
-              считаем, что в сфере аэрозольных технологий должны быть
-              задействованы исключительно специалисты, которые знают все
-              тонкости работ, связанных с применение пестицидов. Остерегайтесь
-              лиц, действующих от нашего имени!
-            </p>
-            <p class="p-adaptive">
               Нас Вы всегда можете найти по телефону:
               <span style="font-weight: bold"
                 ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
               >
             </p>
-            <p class="p-adaptive">Мы всегда рады Вам помочь!</p>
+            <p>Мы всегда рады Вам помочь!</p>
           </div>
-          <div class="about-block__img">
-            <div class="adaptive">
-              <p>
-                Нас Вы всегда можете найти по телефону:
-                <span style="font-weight: bold"
-                  ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
-                >
-              </p>
-              <p>Мы всегда рады Вам помочь!</p>
-            </div>
-            <v-parallax class="parallax-adaptive" src="@/assets/img/5.jpg">
-            </v-parallax>
-          </div>
+          <v-parallax class="parallax-adaptive" src="@/assets/img/5.jpg">
+          </v-parallax>
         </div>
       </div>
     </div>
     <div class="our-advantages">
-      <div class="container">
-        <div class="section-title">Наши преимущества</div>
+      <div class="section-title">Наши преимущества</div>
+      <div class="advantages">
+        <div class="advantages-item">
+          <div class="advantages-item__img">
+            <img src="@/assets/img/icons/advantages/1.svg" alt="" />
+          </div>
+          <p>Экологичность</p>
+        </div>
+        <div class="advantages-item">
+          <div class="advantages-item__img">
+            <img src="@/assets/img/icons/advantages/2.svg" alt="" />
+          </div>
+          <p>Экономичность</p>
+        </div>
+        <div class="advantages-item">
+          <div class="advantages-item__img">
+            <img src="@/assets/img/icons/advantages/3.svg" alt="" />
+          </div>
+          <p>Универсальность</p>
+        </div>
       </div>
+      <v-btn class="know-more" x-large color="#0063A7" dark>
+        Подробнее ...
+      </v-btn>
     </div>
     <div class="our-achievements">
-      <div class="container">
-        <div class="section-title">Наши достижения</div>
-      </div>
+      <div class="section-title">Наши достижения</div>
     </div>
     <div>
-      <div class="container">
-        <div class="section-title">Установка ГАРД</div>
-        <div class="first-block">
-          <div class="first-block__item first-block__left">
-            <p><span>Г</span>енератор</p>
-            <p><span>А</span>эрозольной</p>
-            <p><span>Р</span>егулируемой</p>
-            <p><span>Д</span>исперсности</p>
-          </div>
-          <div class="first-block__item first-block__right">
-            <p>
-              Это универсальная многооперационная установка, имеющая широкую
-              область применения при использовании разрешенных химических и
-              биологических препаратов за счет совмещения в одном механизме
-              функций генератора аэрозоля регулируемой дисперсности частиц и
-              дистанционного мелко, средне и крупнокапельного опрыскивателя.
-            </p>
-            <v-btn class="know-more" x-large color="#0063A7" dark>
-              Узнать больше ...
-            </v-btn>
-          </div>
+      <div class="section-title">Установка ГАРД</div>
+      <div class="first-block">
+        <div class="first-block__item first-block__left">
+          <p><span>Г</span>енератор</p>
+          <p><span>А</span>эрозольной</p>
+          <p><span>Р</span>егулируемой</p>
+          <p><span>Д</span>исперсности</p>
+        </div>
+        <div class="first-block__item first-block__right">
+          <p>
+            Это универсальная многооперационная установка, имеющая широкую
+            область применения при использовании разрешенных химических и
+            биологических препаратов за счет совмещения в одном механизме
+            функций генератора аэрозоля регулируемой дисперсности частиц и
+            дистанционного мелко, средне и крупнокапельного опрыскивателя.
+          </p>
+          <v-btn class="know-more" x-large color="#0063A7" dark>
+            Узнать больше ...
+          </v-btn>
         </div>
       </div>
     </div>
     <div class="second-block">
-      <div class="container">
-        <div class="slider">
-          <v-carousel show-arrows-on-hover height="700px">
-            <v-carousel-item
-              v-for="(img, i) in images"
-              :key="i"
-              :src="img.src"
-            ></v-carousel-item>
-          </v-carousel>
-        </div>
-        <v-btn class="know-more" x-large color="#0063A7" dark>
-          Узнать больше ...
-        </v-btn>
+      <div class="slider">
+        <v-carousel show-arrows-on-hover height="400px">
+          <v-carousel-item
+            v-for="(img, i) in images"
+            :key="i"
+            :src="img.src"
+          ></v-carousel-item>
+        </v-carousel>
       </div>
+      <v-btn class="know-more" x-large color="#0063A7" dark>
+        Узнать больше ...
+      </v-btn>
     </div>
     <div class="our-partners">
-      <div class="container">
-        <div class="section-title">Наши партнеры</div>
-      </div>
+      <div class="section-title">Наши партнеры</div>
     </div>
     <div class="our-partners">
-      <div class="container">
-        <div class="section-title">Контакты</div>
-      </div>
+      <div class="section-title">Контакты</div>
     </div>
   </div>
 </template>
@@ -220,6 +229,9 @@ $maxWidthContainer: 1170;
   @include laptop() {
     flex-direction: column;
   }
+  @include tablets() {
+    margin-bottom: 40px;
+  }
   .p-adaptive {
     @include tablets() {
       display: none;
@@ -332,7 +344,7 @@ $maxWidthContainer: 1170;
 }
 
 .second-block {
-  width: 70%;
+  width: 100%;
   @include laptop() {
     width: 100%;
   }
@@ -359,6 +371,53 @@ $maxWidthContainer: 1170;
     @include phones() {
       width: 100%;
       @include adaptiv-value("font-size", 16, 14, 1);
+    }
+  }
+}
+
+.our-advantages {
+  margin-bottom: 50px;
+  .advantages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    @include tablets() {
+      flex-direction: column;
+      margin-bottom: 0px;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 0 1 32%;
+      padding: 25px 0;
+      border-radius: 5px;
+      background: #5eb760;
+      @include tablets() {
+        margin-bottom: 20px;
+      }
+      &__img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        img {
+          width: 40%;
+          @include tablets() {
+            width: 20%;
+          }
+        }
+      }
+      p {
+        font-weight: bold;
+        color: #fff;
+        font-size: 28px;
+        @include tablets() {
+          font-size: 22px;
+          font-weight: normal;
+        }
+      }
     }
   }
 }

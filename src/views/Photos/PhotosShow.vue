@@ -1,48 +1,55 @@
 <template>
-  <div class="photos-page">
-    <div class="section-title">Фотографии «ГАРД СЕРВИС»</div>
-    <div class="link-to-photos">
-      <div
-        class="link-to-photos-item"
-        v-for="item in gallery"
-        :key="item.bckg"
-        @click.stop="to(item.id)"
-      >
-        <div class="link-to-photos-item__img">
-          <img max-width="" :src="item.bckg" alt="" />
-        </div>
-        <span>Перейти к фотографиям</span>
+  <div class="photos-show-page">
+    <router-link :to="{ name: 'photos' }">
+      <div class="back-btn">
+        <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"
+          />
+        </svg>
+        Назад
       </div>
-    </div>
+    </router-link>
+    <v-row>
+      <v-col
+        v-for="(n, index) in currentArchive"
+        :key="index"
+        class="img-item d-flex child-flex"
+        :cols="$vuetify.breakpoint.xs ? 6 : 4"
+        @click="openPhoto(index)"
+      >
+        <v-img :src="n.src" aspect-ratio="1" class="grey lighten-2">
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-col>
+    </v-row>
+    <v-dialog :max-width="dialogWidth" v-model="dialog">
+      <img :src="openPhotoSrc" />
+    </v-dialog>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Photos",
+  name: "PhotosShow",
 
-  components: {},
+  created() {
+    this.currentArchive = this["archive" + this.id];
+  },
 
   data() {
     return {
-      gallery: [
-        {
-          id: 1,
-          bckg: require("@/assets/img/photos/gard/bckg.jpg"),
-        },
-        {
-          id: 2,
-          bckg: require("@/assets/img/photos/mob-gard/bckg.jpg"),
-        },
-        {
-          id: 3,
-          bckg: require("@/assets/img/photos/agriTekAstana2011/bckg.jpg"),
-        },
-        {
-          id: 4,
-          bckg: require("@/assets/img/photos/agrokompleks2012/bckg.jpg"),
-        },
-      ],
+      dialog: false,
+      openPhotoSrc: null,
+      currentArchive: null,
       archive1: [
         {
           src: require("@/assets/img/photos/gard/1.jpg"),
@@ -146,70 +153,55 @@ export default {
       ],
     };
   },
-
   methods: {
-    to(num) {
-      this.$router.push({
-        path: `/photos-show/${num}`,
-      });
+    openPhoto(idx) {
+      this.dialog = true;
+      this.openPhotoSrc = this.currentArchive[idx].src;
+    },
+  },
+
+  computed: {
+    dialogWidth() {
+      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs)
+        return "100%";
+      return "60%";
+    },
+  },
+
+  icons: {
+    iconfont: "mdi",
+  },
+
+  props: {
+    id: {
+      default: "",
+      type: String,
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-@mixin laptop {
-  @media screen and (max-width: 1024px) {
-    @content;
-  }
+<style lang='scss' scoped>
+.photos-show-page {
+  color: #000;
 }
-@mixin tablets {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
+.img-item {
+  cursor: pointer;
 }
-@mixin phones {
-  @media screen and (max-width: 425px) {
-    @content;
-  }
+img {
+  width: 100%;
 }
-
-.photos-page {
-  .link-to-photos {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    &-item {
-      display: flex;
-      flex-wrap: wrap;
-      cursor: pointer;
-      margin-bottom: 20px;
-      flex: 0 1 32%;
-      background-color: rgb(255, 255, 255);
-      padding: 15px;
-      transition: all 0.3s;
-      border-radius: 5px;
-      @include tablets() {
-        flex: 0 1 100%;
-      }
-      &:hover {
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.349);
-      }
-      &__img {
-        margin-bottom: 20px;
-        img {
-          width: 100%;
-          border-radius: 5px;
-        }
-      }
-      span {
-        display: inline-block;
-        font-size: 18px;
-        opacity: 0.7;
-        border-bottom: 1px solid #000;
-      }
-    }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #000;
+  transition: color 0.3s;
+  &:hover {
+    color: #0063a7;
+  }
+  svg {
+    margin-right: 10px;
   }
 }
 </style>

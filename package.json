@@ -9,11 +9,13 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-it-bigger": "^0.2.2",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@mdi/font": "^5.9.55",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
@@ -26,8 +28,8 @@
     "vuetify-loader": "^1.7.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
+    "> 0%",
+    "last 20 versions",
     "not dead"
   ]
 }

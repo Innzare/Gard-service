@@ -31,6 +31,13 @@ const routes = [
         name: 'photos',
       },
       {
+        path: '/photos-show/:id',
+        component: () => import('@/views/Photos/PhotosShow.vue'),
+        name: 'photos.show',
+        // params: true,
+        props: true
+      },
+      {
         path: '/videos',
         component: () => import('@/views/Videos.vue'),
         name: 'videos',
@@ -51,6 +58,10 @@ const routes = [
         name: 'about',
         params: true,
       },
+      {
+        path: '*',
+        component: () => import('@/views/NotFound.vue'),
+      }
     ]
  },
 ]
