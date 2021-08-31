@@ -87,8 +87,7 @@
           <v-tab>Растениеводство</v-tab>
           <v-tab>Животноводство и птицеводство</v-tab>
           <v-tab>Лесное хозяйство</v-tab>
-          <v-tab>Здравоохранение</v-tab>
-          <v-tab>МЧС</v-tab>
+          <v-tab>Здравоохранение / МЧС</v-tab>
         </v-tabs>
         <v-tabs
           background-color="rgba(0,0,0,.3)"

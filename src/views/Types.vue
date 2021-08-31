@@ -407,6 +407,23 @@
       <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
+            <div class="section-title">МЧС</div>
+            <div class="mchs">
+              <p>
+                Карантинные обработки – обработки территорий при обнаружении на
+                них карантинного вредного организма.
+              </p>
+              <p>
+                Карантинный вредный организм (в карантине растений) – согласно
+                законодательству РФ, это вредный организм, отсутствующий или
+                ограниченно распространенный на территории Российской Федерации;
+                при этом под вредным организмом понимается растение любого вида,
+                сорта или биологического типа, животное или болезнетворный
+                организм любого вида, расы, биологического типа, способные
+                нанести вред растениям или продукции растительного
+                происхождения.
+              </p>
+            </div>
             <div class="section-title">Здравоохранение</div>
             <div class="dop-video-wrapper">
               <div class="video">
@@ -499,7 +516,7 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab-item disabled>
+      <!-- <v-tab-item disabled>
         <v-card flat>
           <v-card-text>
             <div class="section-title">МЧС</div>
@@ -518,7 +535,7 @@
             </p>
           </v-card-text>
         </v-card>
-      </v-tab-item>
+      </v-tab-item> -->
     </v-tabs-items>
   </div>
 </template>
@@ -858,14 +875,23 @@ $maxWidthContainer: 1170;
     flex-direction: column;
     align-items: center;
     flex: 0 1 47%;
+    @include tablets() {
+      margin-bottom: 40px;
+    }
     img {
       width: 30%;
       margin-bottom: 40px;
+      @include tablets() {
+        margin-bottom: 20px;
+      }
     }
     &__title {
       font-weight: bold;
       font-size: 22px;
     }
   }
+}
+.mchs {
+  margin-bottom: 40px;
 }
 </style>
