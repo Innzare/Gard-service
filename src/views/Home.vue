@@ -425,6 +425,13 @@ $maxWidthContainer: 1170;
       }
     }
   }
+  .v-btn {
+    width: auto;
+    @include phones() {
+      width: 100%;
+      @include adaptiv-value("font-size", 16, 14, 1);
+    }
+  }
 }
 </style>
 
