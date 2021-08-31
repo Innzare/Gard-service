@@ -397,17 +397,18 @@ $maxWidthContainer: 1170;
       background: #5eb760;
       @include tablets() {
         margin-bottom: 20px;
-        max-height: 200px;
       }
       &__img {
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
+        width: 40%;
+        @include tablets() {
+          width: 20%;
+          margin-bottom: 10px;
+        }
         img {
-          width: 40%;
-          @include tablets() {
-            width: 20%;
-          }
+          width: 100%;
         }
       }
       p {
@@ -415,8 +416,9 @@ $maxWidthContainer: 1170;
         color: #fff;
         font-size: 28px;
         @include tablets() {
-          font-size: 22px;
+          font-size: 18px;
           font-weight: normal;
+          margin-bottom: 0;
         }
       }
     }

@@ -207,7 +207,6 @@ export default {
         display: inline-block;
         font-size: 18px;
         opacity: 0.7;
-        border-bottom: 1px solid #000;
       }
     }
   }
