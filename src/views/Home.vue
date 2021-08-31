@@ -45,21 +45,15 @@
       <div class="section-title">Наши преимущества</div>
       <div class="advantages">
         <div class="advantages-item">
-          <div class="advantages-item__img">
-            <img src="@/assets/img/icons/advantages/1.svg" alt="" />
-          </div>
+          <img src="@/assets/img/icons/advantages/1.svg" alt="" />
           <p>Экологичность</p>
         </div>
         <div class="advantages-item">
-          <div class="advantages-item__img">
-            <img src="@/assets/img/icons/advantages/2.svg" alt="" />
-          </div>
+          <img src="@/assets/img/icons/advantages/2.svg" alt="" />
           <p>Экономичность</p>
         </div>
         <div class="advantages-item">
-          <div class="advantages-item__img">
-            <img src="@/assets/img/icons/advantages/3.svg" alt="" />
-          </div>
+          <img src="@/assets/img/icons/advantages/3.svg" alt="" />
           <p>Универсальность</p>
         </div>
       </div>
@@ -397,6 +391,14 @@ $maxWidthContainer: 1170;
       background: #5eb760;
       @include tablets() {
         margin-bottom: 20px;
+      }
+      img {
+        width: 40%;
+        margin-bottom: 30px;
+        @include tablets() {
+          width: 20%;
+          margin-bottom: 10px;
+        }
       }
       &__img {
         display: flex;
