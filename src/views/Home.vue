@@ -104,21 +104,53 @@
     <div class="our-partners">
       <div class="section-title">Наши партнеры</div>
     </div>
-    <div class="our-partners">
+    <div class="contacts">
       <div class="section-title">Контакты</div>
+      <div class="contacts-map">
+        <div class="contacts-map-info">
+          <div class="subtitle">Мы ждем вас по адресу:</div>
+          <div class="adress-data">
+            <p>Уфа, Кольцевая 68/1</p>
+            <p>Email: ufa.gard@gmail.com</p>
+            <p>Телефон: +7 (347) 237-60-16</p>
+          </div>
+        </div>
+        <yandex-map
+          ymap-class="map-box"
+          :action="false"
+          :settings="settings"
+          :coords="coords"
+          :controls="mapControls"
+          :zoom="mapZoom"
+          :scroll-zoom="false"
+        >
+          <ymap-marker marker-id="1" :coords="coords" />
+        </yandex-map>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { yandexMap, ymapMarker } from "vue-yandex-maps";
 import { mapGetters } from "vuex";
 export default {
   name: "Home",
+  components: { yandexMap, ymapMarker },
   data() {
     return {
+      coords: [54.82125, 56.088138],
+      mapZoom: 16,
+      settings: {
+        apiKey: "e419efa4-26ff-449c-bbb3-5d21a3216406",
+        lang: "ru_RU",
+        coordorder: "latlong",
+        version: "2.1",
+      },
+      mapControls: [],
       images: [
         {
-          src: require("@/assets/img/14.png"),
+          src: require("@/assets/img/gard-car.png"),
         },
         {
           src: require("@/assets/img/16.png"),
@@ -135,7 +167,6 @@ export default {
   computed: {
     ...mapGetters(["typesTabs"]),
   },
-  components: {},
 };
 </script>
 
@@ -433,6 +464,50 @@ $maxWidthContainer: 1170;
     }
   }
 }
+.contacts {
+  &-map {
+    position: relative;
+    &-info {
+      font-family: "Roboto", serif;
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px 40px;
+      border-radius: 5px;
+      @include tablets() {
+        left: 5%;
+      }
+      @include phones() {
+        position: inherit;
+        transform: translateY(0%);
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        background-color: rgb(255, 255, 255);
+      }
+      .subtitle {
+        font-size: 28px;
+        font-weight: bold;
+        @include tablets() {
+          font-size: 18px;
+        }
+      }
+      .adress-data {
+        margin-top: 20px;
+        p {
+          margin: 0 0 5px;
+          opacity: 0.8;
+          @include tablets() {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 
 <style lang="scss">
@@ -463,6 +538,11 @@ $maxWidthContainer: 1170;
       #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
     );
   }
+}
+
+.map-box {
+  width: 100%;
+  height: 375px;
 }
 .home-page {
   .slider {

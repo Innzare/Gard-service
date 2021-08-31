@@ -25,6 +25,7 @@
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.4.1",
     "vue-template-compiler": "^2.6.11",
+    "vue-yandex-maps": "^0.10.12",
     "vuetify-loader": "^1.7.0"
   },
   "browserslist": [
