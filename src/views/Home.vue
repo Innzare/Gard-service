@@ -19,7 +19,7 @@
             действующих от нашего имени!
           </p>
           <p class="p-adaptive">
-            Нас Вы всегда можете найти по телефону:
+            Связаться с нами Вы всегда можете по телефону:
             <span style="font-weight: bold"
               ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
             >
@@ -29,7 +29,7 @@
         <div class="about-block__img">
           <div class="adaptive">
             <p>
-              Нас Вы всегда можете найти по телефону:
+              Связаться с нами Вы всегда можете по телефону:
               <span style="font-weight: bold"
                 ><a href="tel:+73472376016">+ 7 (347) 237-60-16.</a></span
               >
@@ -110,7 +110,7 @@
         <div class="contacts-map-info">
           <div class="subtitle">Мы ждем вас по адресу:</div>
           <div class="adress-data">
-            <p>Уфа, Кольцевая 68/1</p>
+            <p>г. Уфа, Менделеева 197/2</p>
             <p>Email: ufa.gard@gmail.com</p>
             <p>Телефон: +7 (347) 237-60-16</p>
           </div>

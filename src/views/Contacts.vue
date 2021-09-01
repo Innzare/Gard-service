@@ -1,14 +1,20 @@
 <template>
   <div class="contacts-page">
     <div class="section-title">Контакты техподдержки</div>
-    <div class="contacts-data">
-      <div class="contacts-data__item contacts-data__email">
-        <div>E-mail:</div>
-        <span>ufa.gard@gmail.com</span>
+    <div class="contacts-data-wrapper">
+      <div class="contacts-data__adress d-flex justify-space-between">
+        <div>ООО "ГАРД - Сервис"®</div>
+        <div>Адрес: <span>г. Уфа, ул. Менделеева 197/2</span></div>
       </div>
-      <div class="contacts-data__item contacts-data__phone">
-        <div>Телефон:</div>
-        <span>+7 (347) 237-60-16</span>
+      <div class="contacts-data">
+        <div class="contacts-data__item contacts-data__email">
+          <div>E-mail:</div>
+          <span>ufa.gard@gmail.com</span>
+        </div>
+        <div class="contacts-data__item contacts-data__phone">
+          <div>Телефон:</div>
+          <span>+7 (347) 237-60-16</span>
+        </div>
       </div>
     </div>
     <div class="contacts-form">
@@ -114,6 +120,19 @@ export default {
   @include tablets() {
     flex-direction: column;
     margin: 30px 0 40px;
+  }
+  &__adress {
+    font-size: 28px;
+    border-bottom: 1px solid #a5a5a5;
+    padding-bottom: 10px;
+    span {
+      color: #0064a7;
+    }
+    @include tablets() {
+      margin-bottom: 20px;
+      flex-direction: column;
+      font-size: 18px;
+    }
   }
   &__item {
     flex: 0 1 48%;

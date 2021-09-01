@@ -37,6 +37,7 @@
           style="color: white"
           width="100%"
           color="#0063A7"
+          @click="dialog = true"
         >
           Обратная связь
           <v-icon right dark>mdi-phone</v-icon>
@@ -116,6 +117,70 @@
         </transition>
       </div>
     </v-main>
+
+    <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-card class="pa-0 pa-sm-5">
+        <v-card-title>
+          <div class="text-h7 text-md-h5">Остались вопросы?</div>
+          <div class="caption text-md-subtitle-2" style="word-break: normal">
+            Заполните форму и мы свяжемся с вами в ближайшее время!
+          </div>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col class="pa-0 mt-lg-10 mt-5" cols="12" md="12">
+                <label
+                  style="display: block"
+                  class="font-weight-black mb-2 text-body-2"
+                  >Введите ваше имя</label
+                >
+                <v-text-field
+                  v-model="formData.name"
+                  label="Ваше имя"
+                  required
+                  outlined
+                ></v-text-field>
+              </v-col>
+              <v-col class="pa-0" cols="12" md="12">
+                <label
+                  style="display: block"
+                  class="font-weight-black mb-2 text-body-2"
+                  >Введите ваш Email*</label
+                >
+                <v-text-field
+                  v-model="formData.email"
+                  label="Ваш Email*"
+                  required
+                  outlined
+                ></v-text-field>
+              </v-col>
+              <v-col class="pa-0" cols="12" md="12">
+                <label
+                  style="display: block"
+                  class="font-weight-black mb-2 text-body-2"
+                  >Введите ваш номер телефона</label
+                >
+                <v-text-field
+                  v-model="formData.phone"
+                  label="Ваш телефон"
+                  required
+                  outlined
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+          <small>*Поля обязательны для заполнения</small>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="" text @click="dialog = false"> Закрыть </v-btn>
+          <v-btn color="primary" text @click="dialog = false">
+            Отправить
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -134,6 +199,13 @@ export default {
     drawer: null,
     currentTypesTab: null,
     currentAboutTab: null,
+    dialog: false,
+    formData: {
+      name: null,
+      phone: null,
+      email: null,
+      message: null,
+    },
     items: [
       { title: "Главная", icon: "mdi-home", link: "/" },
       { title: "Виды обработок", icon: "mdi-sprout", link: "types" },
